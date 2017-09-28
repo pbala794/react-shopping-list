@@ -1,10 +1,11 @@
 .App {
   text-align: center;
+  height: 100vh;
 }
 
 .App-header {
   background-color: #222;
-  height: 100px;
+  height: 500px;
   padding: 20px;
   color: #fff;
 }
@@ -15,4 +16,11 @@
 
 .App-intro {
   font-size: large;
+}
+
+.toggleBtn {
+  width: 150px;
+  background: #BFEBD5 !important;
+  color: #333 !important;
+  border: 1px solid #333 !important;
 }
