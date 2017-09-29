@@ -3,24 +3,13 @@
   height: 100vh;
 }
 
-.App-header {
-  background-color: #222;
-  height: 500px;
-  padding: 20px;
-  color: #fff;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
 .toggleBtn {
   width: 150px;
   background: #BFEBD5 !important;
   color: #333 !important;
   border: 1px solid #333 !important;
+}
+
+.logo {
+  margin-left: 50px;
 }

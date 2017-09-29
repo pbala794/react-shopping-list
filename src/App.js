@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Sidebar, Segment, Button, Menu, Image, Icon, Header } from 'semantic-ui-react'
+import { Link } from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -9,7 +10,7 @@ class App extends Component {
   };
   toggleVisibility = () => this.setState({ visible: !this.state.visible });
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
   render() {
     const { visible } = this.state;
@@ -18,27 +19,33 @@ class App extends Component {
     return (
       <div className="App">
          <Menu pointing secondary>
-          <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
-          <Menu.Item name='messages' active={activeItem === 'messages'} onClick={this.handleItemClick} />
-          <Menu.Item name='friends' active={activeItem === 'friends'} onClick={this.handleItemClick} />
+          <Menu.Menu className='logo' position='left'>
+            <li onClick={this.handleItemClick}><Link to='/'>Start</Link></li>
+          </Menu.Menu>
           <Menu.Menu position='right'>
-            <Menu.Item name='logout' active={activeItem === 'logout'} onClick={this.handleItemClick} />
+            <li><Link to='/logout'>Wyloguj</Link></li>
           </Menu.Menu>
         </Menu>
         <Button onClick={this.toggleVisibility} className="toggleBtn">Toggle Visibility</Button>
         <Sidebar.Pushable as={Segment}>
           <Sidebar as={Menu} animation='scale down' width='thin' visible={visible} icon='labeled' vertical inverted>
             <Menu.Item name='home'>
-              <Icon name='home' />
-              Start
+              <Link to='/'>
+                <Icon name='home' />
+                Start
+              </Link>
             </Menu.Item>
             <Menu.Item name='shopping basket'>
-              <Icon name='shopping basket' />
-              Zakupy
+              <Link to='/basket'>
+                <Icon name='shopping basket' />
+                Zakupy
+              </Link>
             </Menu.Item>
             <Menu.Item name='calendar'>
-              <Icon name='calendar' />
-              Okazje
+              <Link to='/calendar'>
+                <Icon name='calendar' />
+                Okazje
+              </Link>
             </Menu.Item>
           </Sidebar>
           <Sidebar.Pusher>
